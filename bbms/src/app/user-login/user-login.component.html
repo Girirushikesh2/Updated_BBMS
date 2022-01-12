@@ -1,0 +1,33 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Hospital Login</h1>
+                    <h6>Please enter registration and password!</h6>
+                </div>
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    
+                    <div class="mb-3 mt-3">
+                        <label for="hospitalregistration" class="form-label">Registration no.</label>
+                        <input formControlName="hospitalregistration" type="text" class="form-control" id="hospitalregistration" aria-describedby="emailHelp">
+                        
+                        <span class="text-danger" *ngIf="loginForm.controls['hospitalregistration'].dirty && loginForm.hasError('required','hospitalregistration')">*Email Id is required</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="hospitalpass" class="form-label">Password</label>
+                        <input formControlName="hospitalpass" type="password" class="form-control" id="hospitalpass">
+                        <span class="text-danger" *ngIf="loginForm.controls['hospitalpass'].dirty && loginForm.hasError('required','hospitalpass')">*Password is required</span>
+                    </div>
+                    
+                    <button type="submit"  [disabled]="!loginForm.valid" class="btn btn-success d-grid mx-auto">Login</button>
+                      
+                </form>
+                <a  routerLink="/hospital-register">New User? Click to signup!</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+

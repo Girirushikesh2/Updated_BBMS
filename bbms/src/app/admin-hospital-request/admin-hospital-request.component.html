@@ -1,0 +1,27 @@
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Request ID</th>
+            <th scope="col">Registration no</th>
+            <th scope="col">Blood group</th>
+            <th scope="col">Quantity (in bags)</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of requestData">
+            <td>{{row.id}}</td>
+            <td>{{row.hospitalregistration}}</td>
+            <td>{{row.bloodgroup}}</td>
+            <td>{{row.quantity}}</td>
+                                  
+            <td>
+                <button type="button" class="btn btn-success " (click)="approve(row.id)">Approve</button>
+                <button type="button" class="btn btn-danger " (click)="reject(row.id)">Reject</button>
+                <button (click)="deleteRequest(row)" class="btn btn-danger ">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+  
